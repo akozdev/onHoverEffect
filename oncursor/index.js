@@ -17,7 +17,8 @@ function handleMouseEnter(e) {
   const handleMouseMoveCopy = handleMouseMove.bind(null, onHoverEffectEl);
 
   e.target.addEventListener('mousemove', handleMouseMoveCopy);
-  e.target.addEventListener('mouseleave', mouseLeaveEvent => {
+  e.target.addEventListener('mouseleave', function handleMouseLeave() {
+    e.target.removeEventListener('mouseleave', handleMouseLeave);
     e.target.removeEventListener('mousemove', handleMouseMoveCopy);
     onHoverEffectEl.remove();
   });
