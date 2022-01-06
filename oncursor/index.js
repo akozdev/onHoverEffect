@@ -25,7 +25,7 @@ function handleMouseEnter(e) {
 }
 
 function handleMouseMove(onHoverEffectEl, e) {
-  const [x, y] = [e.clientX, e.clientY];
+  const [x, y] = [e.pageX, e.pageY];
   onHoverEffectEl.style.left = x + 'px';
   onHoverEffectEl.style.top = y + 'px';
 }
