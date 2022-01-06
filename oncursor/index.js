@@ -2,7 +2,6 @@ const onHoverElements = document.querySelectorAll('img[data-onhover]');
 
 onHoverElements.forEach(onHoverElement => {
   onHoverElement.addEventListener('mouseenter', handleMouseEnter);
-  // onHoverElement.addEventListener('mouseleave', handleMouseLeave);
 });
 
 function handleMouseEnter(e) {
