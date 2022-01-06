@@ -2,7 +2,7 @@ const onHoverElements = document.querySelectorAll('img[data-onhover]');
 
 onHoverElements.forEach(onHoverElement => {
   onHoverElement.addEventListener('mouseenter', handleMouseEnter);
-  onHoverElement.addEventListener('mouseleave', handleMouseLeave);
+  // onHoverElement.addEventListener('mouseleave', handleMouseLeave);
 });
 
 function handleMouseEnter(e) {
@@ -15,18 +15,19 @@ function handleMouseEnter(e) {
 
   document.body.appendChild(onHoverEffectEl);
 
-  e.target.addEventListener(
-    'mousemove',
-    handleMouseMove.bind(null, onHoverEffectEl)
-  );
-}
+  const handleMouseMoveCopy = handleMouseMove.bind(null, onHoverEffectEl);
 
-function handleMouseLeave(e) {}
+  e.target.addEventListener('mousemove', handleMouseMoveCopy);
+  e.target.addEventListener('mouseleave', mouseLeaveEvent => {
+    e.target.removeEventListener('mousemove', handleMouseMoveCopy);
+    onHoverEffectEl.remove();
+  });
+}
 
 function handleMouseMove(onHoverEffectEl, e) {
   const [x, y] = [e.clientX, e.clientY];
-  // TODO: Why helper-container covers all other elements including onHoverEffectEl?
-  onHoverEffectEl.style.transform = `translate(${x}, ${y});`;
+  onHoverEffectEl.style.top = y + 'px';
+  onHoverEffectEl.style.left = x + 'px';
 }
 
 function createOnHoverEffectEl(text, bgColor, color) {
