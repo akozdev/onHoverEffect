@@ -25,18 +25,18 @@ function handleMouseEnter(e) {
 
 function handleMouseMove(onHoverEffectEl, e) {
   const [x, y] = [e.clientX, e.clientY];
-  onHoverEffectEl.style.top = y + 'px';
   onHoverEffectEl.style.left = x + 'px';
+  onHoverEffectEl.style.top = y + 'px';
 }
 
 function createOnHoverEffectEl(text, bgColor, color) {
   const el = document.createElement('div');
   el.style.backgroundColor = bgColor;
-  el.style.color = color;
-  el.style.fontSize = '3rem';
+  el.style.pointerEvents = 'none';
   el.style.position = 'absolute';
   el.style.padding = '3px 6px';
-  el.style.pointerEvents = 'none';
+  el.style.fontSize = '3rem';
+  el.style.color = color;
   el.textContent = text;
 
   return el;
