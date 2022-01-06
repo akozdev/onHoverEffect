@@ -1,0 +1,38 @@
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html { font-size: 62.5% }
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  position: relative;
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: black;
+}
+
+
+.helper-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.photo {
+  width: 60rem;
+}
+
+.onHoverText {
+  font-size: 3rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 3px 6px;
+  pointer-events: none;
+}
