@@ -30,6 +30,7 @@ function handleMouseMove(onHoverEffectEl, e) {
   onHoverEffectEl.style.left = x + 'px';
 }
 
+// TODO: Make the CSS code all in JS
 function createOnHoverEffectEl(text, bgColor, color) {
   const el = document.createElement('div');
   el.style.backgroundColor = bgColor;
