@@ -10,12 +10,10 @@ body {
   font-family: 'Inter', sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
-  position: relative;
   box-sizing: border-box;
   height: 100vh;
   background-color: black;
 }
-
 
 .helper-container {
   display: flex;
