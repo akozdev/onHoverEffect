@@ -38,7 +38,6 @@ function createOnHoverEffectEl(text, bgColor, color) {
   el.style.padding = '3px 6px';
   el.style.pointerEvents = 'none';
   el.textContent = text;
-  el.classList.add('onHoverText');
 
   return el;
 }
