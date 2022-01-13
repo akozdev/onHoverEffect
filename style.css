@@ -18,11 +18,9 @@ body {
 .helper-container {
   display: flex;
   align-items: center;
-  justify-content: space-around;
   flex-wrap: wrap;
+  justify-content: space-around;
   height: 100%;
 }
 
-.photo {
-  width: 60rem;
-}
+.photo { width: 60rem; }
